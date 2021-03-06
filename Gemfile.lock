@@ -50,11 +50,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
-    aws-eventstream (1.1.0)
-    aws-partitions (1.430.0)
+    aws-eventstream (1.1.1)
+    aws-partitions (1.431.1)
     aws-record (2.5.0)
       aws-sdk-dynamodb (~> 1.18)
-    aws-sdk-core (3.112.0)
+    aws-sdk-core (3.112.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
@@ -85,7 +85,7 @@ GEM
     aws-sessionstore-dynamodb (2.0.1)
       aws-sdk-dynamodb (~> 1)
       rack (~> 2)
-    aws-sigv4 (1.2.2)
+    aws-sigv4 (1.2.3)
       aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.16)
     bootsnap (1.7.2)
@@ -114,7 +114,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
-    ffi (1.14.2)
+    ffi (1.15.0)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     foreman (0.82.0)
@@ -149,7 +149,7 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
-    nio4r (2.5.5)
+    nio4r (2.5.7)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -247,4 +247,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
