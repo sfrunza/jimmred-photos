@@ -1,0 +1,145 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+} */
+/* html {
+  overflow-y: scroll;
+  fontFamily: -apple-system, BlinkMacSystemFont, sans-serif;
+} */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+}
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+#root {
+  height: 100%;
+}
+
+.ReactModal__Overlay {
+  z-index: 1100 !important;
+}
+
+.sc-AxiKw .eCkqmw {
+}
+
+.sc-AxiKw .eCkqmw img {
+  background: #1abc9c !important;
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.sc-AxiKw .eCkqmw img:hover {
+  opacity: 0.5 !important;
+}
+
+/* .wrap {
+  margin: 0 auto;
+  width: 90%; */
+/*
+  Be careful with height set on
+  the parent of a sticky element.
+  Uncomment to see issue.
+*/
+/*   height: 40%; */
+/*
+  overflow cannot be used on
+  parents of position: sticky,
+  uncomment to demonstrate the issue.
+*/
+/*   overflow: hidden; */
+/*   overflow-y: scroll; */
+/* } */
+
+/* .aside {
+  background: #eee;
+  float: right;
+  width: 20%;
+  padding: 1em; */
+/* position sticky */
+/* position: sticky;
+  top: 7em;
+} */
+/* .content {
+  width: 50%;
+} */
+
+.header_1tk9zku {
+  height: 35px;
+  margin-bottom: 5px;
+}
+
+.nice-dates-day:before {
+  background-color: #1d88e5;
+  z-index: 1;
+}
+.nice-dates-day.-today {
+  font-weight: 900;
+  color: #1d88e5;
+  text-decoration: underline;
+}
+
+/* pick time disable nonactive */
+.dlXWNb {
+  display: none;
+}
+
+/* calendar width */
+.jQMQWL {
+  width: 100%;
+}
+.ReactGridGallery_custom-overlay {
+  transition: all 0.3s ease;
+}
+
+/* start hover img store page */
+.container {
+  position: relative;
+  width: auto;
+  height: 400px;
+}
+.container:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+.container:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 16px;
+}
+.container img {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.container:hover div {
+  opacity: 1;
+}
+/* .MuiButton-root {
+  border-radius: 0px !important;
+} */
