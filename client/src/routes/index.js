@@ -29,7 +29,7 @@ export default function Routes() {
   useEffect(() => {
     getPhotos(dispatch);
     console.log("getphotos effect");
-  }, [JSON.stringify(photos), dispatch]);
+  }, [dispatch]);
 
   if (loginStatus === null) {
     return <LoadingScreen />;

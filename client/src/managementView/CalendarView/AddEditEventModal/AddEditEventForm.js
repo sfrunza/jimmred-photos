@@ -23,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
 
 function AddEditEventForm({ event, mode, onAdd, onCancel, onDelete, onEdit }) {
   const classes = useStyles();
-  console.log(event);
-
   return (
     <div>
       <Box p={3}>

@@ -17,7 +17,7 @@ export const getUser = async (dispatch) => {
 
   // do fetch
   await axios
-    .get("/users.json")
+    .get("/api/v1/users.json")
     .then((res) => {
       if (res.data.logged_in) {
         const result = res.data.current_user;
@@ -149,7 +149,7 @@ export const signOut = async (dispatch, history) => {
 
 export const updateProfile = (dispatch, newUser, id) => {
   // do fetch
-  fetch(`/users/${id}`, {
+  fetch(`/api/v1/users/${id}`, {
     method: "PUT",
     body: JSON.stringify({ user: newUser }),
     headers: {

@@ -118,7 +118,7 @@ function CalendarView() {
 
   const getEvents = useCallback(() => {
     var arr = [];
-    axios.get("/events").then((response) => {
+    axios.get("/api/v1/events").then((response) => {
       if (isMountedRef.current) {
         let data = response.data;
         // '2010-01-01T14:30:00',

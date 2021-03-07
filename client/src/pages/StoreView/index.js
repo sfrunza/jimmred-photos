@@ -25,7 +25,13 @@ const StoreView = () => {
     <Page title="Store" className={classes.root}>
       <Section>
         <SectionHeader title="Store" align="center" />
-        <ImagesList images={photos} setChanged={setChanged} changed={changed} />
+        {photos && (
+          <ImagesList
+            images={photos}
+            setChanged={setChanged}
+            changed={changed}
+          />
+        )}
       </Section>
     </Page>
   );
