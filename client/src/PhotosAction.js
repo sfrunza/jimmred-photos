@@ -15,7 +15,7 @@ export const getPhotos = async (dispatch) => {
   // setLoading(dispatch, true);
   // do fetch
   await axios
-    .get("/api/v1/photos")
+    .get("/photos.json")
     .then((res) => {
       // set photos
       dispatch({
@@ -47,7 +47,7 @@ export const getPhotos = async (dispatch) => {
 
 export const editPhoto = (dispatch, newPhoto, id) => {
   // do fetch
-  fetch(`/api/v1/photos/${id}`, {
+  fetch(`/photos/${id}`, {
     method: "PUT",
     body: JSON.stringify(newPhoto),
     headers: {
@@ -62,7 +62,7 @@ export const editPhoto = (dispatch, newPhoto, id) => {
 };
 
 export const removePhoto = (dispatch, id) => {
-  fetch(`/api/v1/photos/${id}`, {
+  fetch(`/photos/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export const removePhoto = (dispatch, id) => {
   });
 };
 export const addPhoto = (dispatch, formData, values) => {
-  fetch("/api/v1/photos", {
+  fetch("/photos", {
     method: "POST",
     body: formData,
   }).then((response) => {

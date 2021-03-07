@@ -23,7 +23,7 @@ function EventsListView() {
   const [events, setEvents] = useState(null);
 
   const getUsers = useCallback(() => {
-    axios.get("/api/v1/events.json").then((response) => {
+    axios.get("/events.json").then((response) => {
       if (isMountedRef.current) {
         let data = response.data;
         setEvents(data);

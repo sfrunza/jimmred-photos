@@ -118,11 +118,10 @@ function CalendarView() {
 
   const getEvents = useCallback(() => {
     var arr = [];
-    axios.get("/api/v1/events").then((response) => {
+    axios.get("/events").then((response) => {
       if (isMountedRef.current) {
         let data = response.data;
         // '2010-01-01T14:30:00',
-
         data.map((info) => {
           let formatDay = moment(info.date, "dddd MMM Do, YYYY").format(
             "YYYY-MM-DD"
