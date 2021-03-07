@@ -24,7 +24,6 @@ export default function Routes() {
 
   useEffect(() => {
     getUser(dispatch);
-    setLoading(dispatch, false);
   }, [dispatch]);
 
   useEffect(() => {
@@ -32,9 +31,6 @@ export default function Routes() {
     console.log("getphotos effect");
   }, [JSON.stringify(photos), dispatch]);
 
-  // if (loginStatus === null) {
-  //   return <LoadingScreen />;
-  // }
   return (
     <div style={{ height: "100%" }}>
       <Switch>

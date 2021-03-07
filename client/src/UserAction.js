@@ -35,6 +35,10 @@ export const getUser = async (dispatch) => {
             message: "",
           },
         });
+        dispatch({
+          type: "SET_LOADING",
+          payload: false,
+        });
       } else {
         dispatch({
           type: "SET_USER",

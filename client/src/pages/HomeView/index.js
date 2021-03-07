@@ -60,7 +60,7 @@ const HomeView = () => {
   // }
 
   return (
-    <Page title="Home" className={classes.root}>
+    <Page title="Portfolio" className={classes.root}>
       <Section className={clsx(classes.pagePaddingTop, classes.section)}>
         <SectionHeader
           title="Home"

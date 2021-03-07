@@ -15,7 +15,7 @@ export const getPhotos = async (dispatch) => {
   // setLoading(dispatch, true);
   // do fetch
   await axios
-    .get("/api/v1/photos.json")
+    .get("/api/v1/photos")
     .then((res) => {
       // set photos
       dispatch({
