@@ -67,6 +67,10 @@ function Uploader({ setImages, images, text }) {
           setSubmitting(false);
           enqueueSnackbar("Image Added", {
             variant: "success",
+            anchorOrigin: {
+              vertical: "top",
+              horizontal: "right",
+            },
           });
         } catch (err) {
           setErrors({ submit: err.message });

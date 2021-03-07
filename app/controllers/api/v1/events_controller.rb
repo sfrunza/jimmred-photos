@@ -1,6 +1,6 @@
 module Api::V1
   class EventsController < ApplicationController
-    before_action :set_event, only: [:show, :update, :destroy]
+    # before_action :set_event, only: [:show, :update, :destroy]
 
     # GET /events
     def index
@@ -41,9 +41,9 @@ module Api::V1
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_event
-        @event = Event.find(params[:id])
-      end
+      # def set_event
+      #   @event = Event.find(params[:id])
+      # end
 
       # Only allow a trusted parameter "white list" through.
       def event_params

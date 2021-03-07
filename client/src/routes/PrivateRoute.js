@@ -9,6 +9,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   if (loginStatus === null) {
     return <LoadingScreen />;
   }
+  console.log(loginStatus);
   return (
     // Show the component only when the user is logged in
     // Otherwise, redirect the user to /signin page

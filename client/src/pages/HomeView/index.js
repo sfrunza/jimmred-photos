@@ -64,7 +64,7 @@ const HomeView = () => {
       <Section className={clsx(classes.pagePaddingTop, classes.section)}>
         <SectionHeader
           title="Home"
-          subtitle="Welcome"
+          subtitle="Welcome to JimmRedPhotos"
           align="center"
           disableGutter
         />

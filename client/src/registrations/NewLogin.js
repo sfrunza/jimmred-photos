@@ -148,7 +148,7 @@ const NewLogin = ({ history, handleLogin, loginStatus, open, ...rest }) => {
                 label="Email *"
                 variant="outlined"
                 size="medium"
-                id="pass"
+                id="Email"
                 name="email"
                 onChange={handleChange}
                 type={formState.showPassword ? "text" : "email"}

@@ -17,7 +17,7 @@ export const getUser = async (dispatch) => {
 
   // do fetch
   await axios
-    .get("/api/v1/users")
+    .get("/api/v1/users.json")
     .then((res) => {
       if (res.data.logged_in) {
         const result = res.data.current_user;
@@ -40,47 +40,6 @@ export const getUser = async (dispatch) => {
           type: "SET_USER",
           payload: null,
           loginStatus: false,
-        });
-      }
-    })
-    .catch((error) => {
-      const result = error;
-      console.log(error);
-
-      // set error if has any
-      dispatch({
-        type: "SET_ERROR",
-        payload: {
-          error: true,
-          message: result,
-        },
-      });
-    });
-};
-
-export const getUsers = async (dispatch) => {
-  // do fetch
-  await axios
-    .get("/api/v1/users")
-    .then((res) => {
-      if (res.data.logged_in) {
-        const result = res.data.users;
-        // set users info
-        dispatch({
-          type: "SET_USERS",
-          payload: result,
-        });
-        dispatch({
-          type: "SET_ERROR",
-          payload: {
-            error: false,
-            message: "",
-          },
-        });
-      } else {
-        dispatch({
-          type: "SET_USERS",
-          payload: null,
         });
       }
     })

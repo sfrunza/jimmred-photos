@@ -15,7 +15,7 @@ export const getPhotos = async (dispatch) => {
   // setLoading(dispatch, true);
   // do fetch
   await axios
-    .get("/api/v1/photos")
+    .get("/api/v1/photos.json")
     .then((res) => {
       // set photos
       dispatch({
@@ -75,7 +75,7 @@ export const removePhoto = (dispatch, id) => {
   });
 };
 export const addPhoto = (dispatch, formData, values) => {
-  fetch("/api/v1/photos.json", {
+  fetch("/api/v1/photos", {
     method: "POST",
     body: formData,
   }).then((response) => {
