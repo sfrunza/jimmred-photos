@@ -48,7 +48,10 @@ const NewLogin = ({ history, handleLogin, loginStatus, open, ...rest }) => {
   const classes = useStyles();
   const [formState, setFormState] = useState({
     isValid: false,
-    values: {},
+    values: {
+      email: "test@mail.ru",
+      password: "111111",
+    },
     touched: {},
     errors: {},
     showPassword: false,

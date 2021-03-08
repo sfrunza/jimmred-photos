@@ -7,7 +7,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import Page from "src/components/Page";
-import Contact from "./Contact";
+import ContactForm from "./components/ContactForm";
 import ServiceSelect from "./ServiceSelect";
 import DaySelect from "./DaySelect";
 import ServiceComponent from "./components/ServiceComponent";
@@ -111,7 +111,7 @@ function BookView(props) {
                   )}
 
                   {activeStep === 3 && (
-                    <Contact
+                    <ContactForm
                       onBack={handleBack}
                       onNext={handleNext}
                       setFormState={setFormState}

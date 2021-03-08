@@ -37,7 +37,6 @@ export const CartProvider = ({ children }) => {
   };
   // remove item
   const removeItem = (id) => {
-    console.log(id);
     dispatch({ type: REMOVE_CART_ITEM, payload: id });
   };
   // toggle amount

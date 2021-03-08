@@ -89,7 +89,6 @@ function Uploader({ setImages, images, text }) {
         touched,
         values,
       }) => {
-        console.log(values);
         return (
           <form onSubmit={handleSubmit} className={classes.root}>
             <Grid className={classes.buttonCamera}>

@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "baseline",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+    },
   },
   messageWidth: {
     maxWidth: 280,
@@ -41,13 +44,13 @@ function AddEditEventForm({ event, mode, onAdd, onCancel, onDelete, onEdit }) {
           <Box>
             <Typography variant="body2">{event.email}</Typography>
           </Box>
-          <Box mt={2}>
+          <Box mt={1}>
             <Typography variant="h6">Subject</Typography>
           </Box>
           <Box>
             <Typography variant="body2">{event.subject}</Typography>
           </Box>
-          <Box mt={2}>
+          <Box mt={1}>
             <Typography variant="h6">Message</Typography>
           </Box>
           <Box>

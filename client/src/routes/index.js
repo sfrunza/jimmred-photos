@@ -28,8 +28,8 @@ export default function Routes() {
 
   useEffect(() => {
     getPhotos(dispatch);
-    console.log("getphotos effect");
-  }, [dispatch]);
+    // console.log("getphotos effect");
+  }, [dispatch, JSON.stringify(photos)]);
 
   if (loginStatus === null) {
     return <LoadingScreen />;
@@ -79,7 +79,7 @@ export default function Routes() {
               <Suspense fallback="">
                 <Switch>
                   {user ? (
-                    <Redirect from="/login" to="/" />
+                    <Redirect from="/login" to="/app" />
                   ) : (
                     <Route exact path="/login" component={SignInPage} />
                   )}

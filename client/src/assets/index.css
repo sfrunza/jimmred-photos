@@ -104,8 +104,9 @@ a {
 }
 
 /* calendar width */
+
 .jQMQWL {
-  width: 100%;
+  width: 100% !important;
 }
 .ReactGridGallery_custom-overlay {
   transition: all 0.3s ease;
