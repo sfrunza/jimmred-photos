@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignInPage = ({ loginStatus, handleLogin, history, setOpen, open }) => {
+const SignInPage = ({ history }) => {
   const classes = useStyles();
 
   return (
@@ -31,12 +31,7 @@ const SignInPage = ({ loginStatus, handleLogin, history, setOpen, open }) => {
           className={classes.header}
         />
         <div className={classes.formContainer}>
-          <NewLogin
-            handleLogin={handleLogin}
-            history={history}
-            loginStatus={loginStatus}
-            open={open}
-          />
+          <NewLogin history={history} />
         </div>
       </div>
     </Page>

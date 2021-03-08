@@ -121,7 +121,6 @@ function CalendarView() {
     axios.get("/api/v1/events").then((response) => {
       if (isMountedRef.current) {
         let data = response.data;
-        // '2010-01-01T14:30:00',
         data.map((info) => {
           let formatDay = moment(info.date, "dddd MMM Do, YYYY").format(
             "YYYY-MM-DD"
@@ -244,8 +243,6 @@ function CalendarView() {
   };
 
   const handleEventDrop = ({ event }) => {
-    // If you add a droppable area, check if event dropped inside or outside of calendar
-    // Call API to update the event in database
     setEvents((prevEvents) =>
       prevEvents.map((prevEvent) =>
         prevEvent.id === event.id
@@ -292,7 +289,6 @@ function CalendarView() {
             eventResize={handleEventResize}
             events={events}
             timeFormat="h:mm"
-            // eventRender={EventDetail}
             header={false}
             height={800}
             ref={calendarRef}

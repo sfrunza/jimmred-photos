@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Dialog } from '@material-ui/core';
-import AddEditEventForm from './AddEditEventForm';
+import React from "react";
+import PropTypes from "prop-types";
+import { Dialog } from "@material-ui/core";
+import AddEditEventForm from "./AddEditEventForm";
 
 function AddEditEventModal({
   event,
@@ -14,14 +14,7 @@ function AddEditEventModal({
   ...rest
 }) {
   return (
-    <Dialog
-      maxWidth="sm"
-      fullWidth
-      onClose={onCancel}
-      open={open}
-      {...rest}
-    >
-      {/* Dialog renders its body even if not open */}
+    <Dialog maxWidth="sm" fullWidth onClose={onCancel} open={open} {...rest}>
       {open && (
         <AddEditEventForm
           event={event}
@@ -38,12 +31,12 @@ function AddEditEventModal({
 
 AddEditEventModal.propTypes = {
   event: PropTypes.object,
-  mode: PropTypes.oneOf(['add', 'edit']),
+  mode: PropTypes.oneOf(["add", "edit"]),
   onAdd: PropTypes.func,
   onCancel: PropTypes.func,
   onDelete: PropTypes.func,
   onEdit: PropTypes.func,
-  open: PropTypes.bool
+  open: PropTypes.bool,
 };
 
 AddEditEventModal.defaultProps = {
@@ -52,7 +45,7 @@ AddEditEventModal.defaultProps = {
   onCancel: () => {},
   onDelete: () => {},
   onEdit: () => {},
-  open: false
+  open: false,
 };
 
 export default AddEditEventModal;

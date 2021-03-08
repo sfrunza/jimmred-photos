@@ -1,9 +1,7 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { useDropzone } from "react-dropzone";
-// import PerfectScrollbar from 'react-perfect-scrollbar';
 import imageCompression from "browser-image-compression";
 import {
   Box,
@@ -15,7 +13,6 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
-// import bytesToSize from 'src/utils/bytesToSize';
 import { Camera as CameraIcon } from "react-feather";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,10 +54,6 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     width: "100%",
-    // borderColor: colors.deepPurple["A200"],
-    // "&:hover": {
-    //   borderColor: colors.deepPurple["A200"],
-    // },
   },
   buttonBox: {
     width: "100%",
@@ -103,9 +96,6 @@ function FilesDropzone({
       Object.assign(compressedFile, { path: imageFile.path });
       setFiles(compressedFile);
       setFieldValue("image", compressedFile);
-      // setFieldValue("name", compressedFile.name);
-
-      // await console.log("await"); // write your own logic
     } catch (error) {
       console.log(error);
     }

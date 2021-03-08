@@ -99,7 +99,6 @@ const Body = ({ photo }) => {
           </SvgIcon>
         </IconButton>
       </TableCell>
-      <TableCell>{/*  <EditForm photo={photo} />*/}</TableCell>
     </TableRow>
   );
 };

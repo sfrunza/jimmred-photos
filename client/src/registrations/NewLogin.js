@@ -21,18 +21,7 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // width: '100%',
-    // backgroundColor: theme.palette.background.default,
-    // padding: theme.spacing(4),
-    [theme.breakpoints.down("xs")]: {
-      paddingLeft: 0,
-      paddingRight: 0,
-    },
-    // borderRadius: 4,
-    // boxShadow:
-    //   "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);",
-  },
+  root: {},
   alert: {
     marginBottom: "1em",
     color: "red",
@@ -65,7 +54,6 @@ const NewLogin = ({ history, handleLogin, loginStatus, open, ...rest }) => {
     showPassword: false,
   });
   const [{ message }, dispatch] = useStateValue();
-  // const [showPassword, setShownPassword] = useState(false);
 
   useEffect(() => {
     const errors = validate(formState.values, schema);
