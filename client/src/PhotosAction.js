@@ -33,7 +33,6 @@ export const getPhotos = async (dispatch) => {
     .catch((error) => {
       const result = error;
       console.log(error);
-
       // set error if has any
       dispatch({
         type: "SET_ERROR",

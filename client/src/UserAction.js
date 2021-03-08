@@ -17,7 +17,7 @@ export const getUser = async (dispatch) => {
 
   // do fetch
   await axios
-    .get("/api/v1/users.json")
+    .get("/api/v1/users")
     .then((res) => {
       if (res.data.logged_in) {
         const result = res.data.current_user;

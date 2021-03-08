@@ -2,7 +2,7 @@
   "name": "jimm-red",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@fullcalendar/core": "^4.4.0",
