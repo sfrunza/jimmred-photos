@@ -87,15 +87,15 @@ function FilesDropzone({
     const imageFile = acceptedFiles[0];
 
     const options = {
-      maxSizeMB: 1,
-      maxWidthOrHeight: 1920,
-      useWebWorker: true,
+      // maxSizeMB: 1,
+      // maxWidthOrHeight: 1920,
+      // useWebWorker: true,
     };
     try {
       const compressedFile = await imageCompression(imageFile, options);
       Object.assign(compressedFile, { path: imageFile.path });
-      setFiles(compressedFile);
-      setFieldValue("image", compressedFile);
+      setFiles(imageFile);
+      setFieldValue("image", imageFile);
     } catch (error) {
       console.log(error);
     }

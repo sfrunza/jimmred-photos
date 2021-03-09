@@ -100,15 +100,19 @@ const ContactView = () => {
                     <Box>
                       <Box>
                         <Typography variant="h6">Email</Typography>
-                        <Typography variant="subtitle2">
-                          jimmredphotos@gmail.com
-                        </Typography>
+                        <a href="mailto:jjxcustom@gmail.com">
+                          <Typography variant="subtitle2">
+                            jjxcustom@gmail.com
+                          </Typography>
+                        </a>
                       </Box>
                       <Box mt={3}>
                         <Typography variant="h6">Phone</Typography>
-                        <Typography variant="subtitle2">
-                          123-123-1234
-                        </Typography>
+                        <a href="tel:6464644693">
+                          <Typography variant="subtitle2">
+                            646-464-4693
+                          </Typography>
+                        </a>
                       </Box>
                     </Box>
                   }

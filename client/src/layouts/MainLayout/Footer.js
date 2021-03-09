@@ -68,7 +68,7 @@ const Footer = (props) => {
           <Typography
             className={classes.listItem}
             component="a"
-            href="#"
+            href="https://www.facebook.com/Jimmredphoto"
             target="_blank"
           >
             <FacebookIcon color="white" size="18px" />
@@ -78,7 +78,7 @@ const Footer = (props) => {
           <Typography
             className={classes.listItem}
             component="a"
-            href="#"
+            href="https://twitter.com/Jamm64550004"
             target="_blank"
           >
             <TwitterIcon color="white" size="18px" />
