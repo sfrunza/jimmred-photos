@@ -21,22 +21,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 74,
     background: `url("https://static.wixstatic.com/media/a38016_06297691cb8b4c34895a188f45151984.jpg/v1/fill/w_2698,h_1964,al_t,q_90,usm_0.66_1.00_0.01/a38016_06297691cb8b4c34895a188f45151984.webp") no-repeat center ${colors.blueGrey[200]}`,
     backgroundSize: "cover",
-
-    // [theme.breakpoints.down("xs")]: {
-    //   flex: 1,
-    // },
-
     [theme.breakpoints.up("md")]: {
       minHeight: "90vh",
     },
   },
   section: {
-    // position: "absolute",
-    // top: "50%",
-    // left: "50%",
-    // transform: "translate(-50%, -50%)",
-    // display: "flex",
-    // justifyContent: "flex-end",
     padding: theme.spacing(4, 2),
     [theme.breakpoints.up("md")]: {
       position: "absolute",
@@ -137,15 +126,19 @@ const ContactView = () => {
                     <Box>
                       <Box>
                         <Typography variant="h6">Email</Typography>
-                        <Typography variant="subtitle2">
-                          jimmredphotos@gmail.com
-                        </Typography>
+                        <a href="mailto:jjxcustom@gmail.com">
+                          <Typography variant="subtitle2">
+                            jjxcustom@gmail.com
+                          </Typography>
+                        </a>
                       </Box>
                       <Box mt={3}>
                         <Typography variant="h6">Phone</Typography>
-                        <Typography variant="subtitle2">
-                          123-123-1234
-                        </Typography>
+                        <a href="tel:6464644693">
+                          <Typography variant="subtitle2">
+                            646-464-4693
+                          </Typography>
+                        </a>
                       </Box>
                     </Box>
                   }

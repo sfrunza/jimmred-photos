@@ -69,7 +69,7 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
       validationSchema={Yup.object().shape({
         name: Yup.string().min(3, "Must be at least 3").required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
-        subject: Yup.string().required("Required"),
+        // subject: Yup.string().required("Required"),
         message: Yup.string().required("Required"),
       })}
       onSubmit={async (
@@ -77,16 +77,6 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
         { setErrors, setStatus, setSubmitting, resetForm }
       ) => {
         try {
-          // setFormState({
-          //   ...formState,
-          //   values: {
-          //     ...formState.values,
-          //     name: values.name,
-          //     email: values.email,
-          //     subject: values.subject,
-          //     message: values.message,
-          //   }
-          // });
           axios.post("/api/v1/events", {
             ...formState.values,
             name: values.name,
@@ -180,7 +170,6 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
                   <Box mt={6} className={classes.flexConatiner}>
                     <TextField
                       error={errors.name ? true : false}
-                      helperText={errors.name || ""}
                       fullWidth
                       label="Name"
                       name="name"
@@ -194,7 +183,6 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
                   <Box mt={2} className={classes.flexConatiner}>
                     <TextField
                       error={errors.email ? true : false}
-                      helperText={errors.email || ""}
                       fullWidth
                       label="Email"
                       name="email"
@@ -207,12 +195,9 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
                   </Box>
                   <Box mt={2} className={classes.flexConatiner}>
                     <TextField
-                      error={errors.subject ? true : false}
-                      helperText={errors.subject || ""}
                       fullWidth
                       label="Subject"
                       name="subject"
-                      required
                       onChange={handleChange}
                       value={values.subject || ""}
                       variant="outlined"
@@ -223,7 +208,6 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
                     <TextField
                       label="Message"
                       error={errors.message ? true : false}
-                      helperText={errors.message || ""}
                       name="message"
                       required
                       onChange={handleChange}

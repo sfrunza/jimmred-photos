@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 2021_03_04_213545) do
     t.string "name"
     t.integer "price"
     t.integer "likes"
-    t.string "description"
+    t.string "dimensions"
+    t.string "filename"
     t.boolean "liked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

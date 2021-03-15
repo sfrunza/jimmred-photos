@@ -11,16 +11,30 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    flexFlow: "row wrap",
+    // [theme.breakpoints.down("sm")]: {
+    //   flexWrap: "wrap",
+    // },
+    "&*": {
+      flex: "1 100%",
+    },
   },
   imageContainer: {
     textAlign: "center",
+
+    [theme.breakpoints.up("lg")]: {
+      order: 2,
+      flex: "3 0px",
+    },
   },
   image: {
     width: "auto",
     height: "auto",
     maxHeight: "75vh",
     maxWidth: "100%",
-    [theme.breakpoints.down("sm")]: {
+    pointerEvents: "none",
+    objectFit: "contain",
+    [theme.breakpoints.down("lg")]: {
       width: "100%",
     },
   },
@@ -29,13 +43,38 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
+  aside: {
+    [theme.breakpoints.down("xl")]: {
+      // justifyContent: "space-between",
+      flex: "1 0 0",
+    },
+  },
+  aside1: {
+    [theme.breakpoints.up("lg")]: {
+      order: 1,
+    },
+  },
+  aside2: {
+    [theme.breakpoints.up("lg")]: {
+      order: 3,
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      justifyContent: "flex-end",
+      flex: 1,
+    },
+  },
 }));
 
 const ImageSelect = ({ image, onNext, onPrev }) => {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
-      <Box>
+      <Box className={classes.imageContainer}>
+        <img src={image.image.url} alt={image.name} className={classes.image} />
+      </Box>
+      <Box className={(classes.aside, classes.aside1)}>
         <Typography
           type="button"
           style={{ cursor: "pointer" }}
@@ -44,10 +83,7 @@ const ImageSelect = ({ image, onNext, onPrev }) => {
           <ChevronLeftIcon size={60} strokeWidth="0.5" />
         </Typography>
       </Box>
-      <Box className={classes.imageContainer} flexGrow="1">
-        <img src={image.image.url} alt={image.name} className={classes.image} />
-      </Box>
-      <Box>
+      <Box className={(classes.selected, classes.aside2)}>
         <Typography
           type="button"
           style={{ cursor: "pointer" }}

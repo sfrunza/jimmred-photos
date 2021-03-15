@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Page from "src/components/Page";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, useMediaQuery } from "@material-ui/core";
 // import HeroBackground from "src/components/HeroBackground";
 // import Gallery from "./Gallery";
-import SectionHeader from "src/components/SectionHeader";
+// import SectionHeader from "src/components/SectionHeader";
 import Section from "src/components/Section";
 import clsx from "clsx";
 // import GridGallery from "./GridGallery";
 import axios from "axios";
+import Header from "./Header";
+import VideoSection from "./VideoSection";
 // import LoadingScreen from "src/components/LoadingScreen";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,11 +22,20 @@ const useStyles = makeStyles((theme) => ({
   uploderContainer: {
     margin: "auto",
   },
+  section: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(10, 0),
+    },
+  },
 }));
 
 const HomeView = () => {
   const classes = useStyles();
   const [images, setImages] = useState(null);
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+    defaultMatches: true,
+  });
 
   const getImages = useCallback(() => {
     axios.get("/photos").then((response) => {
@@ -61,14 +72,9 @@ const HomeView = () => {
 
   return (
     <Page title="Portfolio" className={classes.root}>
+      <Header />
       <Section className={clsx(classes.pagePaddingTop, classes.section)}>
-        <SectionHeader
-          title="Home"
-          subtitle="Welcome to JimmRedPhotos"
-          align="center"
-          disableGutter
-        />
-
+        <VideoSection />
         {/*<GridGallery images={images} handleDelete={handleDelete} />*/}
       </Section>
     </Page>

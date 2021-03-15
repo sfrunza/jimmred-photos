@@ -24,6 +24,12 @@ export default function Paypal() {
 
     window.paypal
       .Buttons({
+        style: {
+          shape: "rect",
+          color: "blue",
+          layout: "vertical",
+          label: "buynow",
+        },
         createOrder: (data, actions, err) => {
           return actions.order.create({
             intent: "CAPTURE",

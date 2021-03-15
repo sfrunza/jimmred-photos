@@ -10,6 +10,7 @@ import HomeView from "src/pages/HomeView";
 import AboutView from "src/pages/AboutView";
 import BookView from "src/pages/BookView";
 import StoreView from "src/pages/StoreView";
+import StoreImageView from "src/pages/StoreImageView";
 import ContactView from "src/pages/ContactView";
 import CheckoutView from "src/pages/CheckoutView";
 import Error404View from "src/pages/Error404View";
@@ -72,6 +73,7 @@ export default function Routes() {
             </DashboardLayout>
           )}
         />
+        <Route exact path="/store/:id" component={StoreImageView} />
         <Route
           path="/"
           render={(props) => (
@@ -87,6 +89,7 @@ export default function Routes() {
                   <Route exact path="/about" component={AboutView} />
                   <Route exact path="/contact" component={ContactView} />
                   <Route exact path="/store" component={StoreView} />
+
                   <Route exact path="/checkout" component={CheckoutView} />
                   <Route exact path="/" component={HomeView} />
                   <Redirect to="/404" />

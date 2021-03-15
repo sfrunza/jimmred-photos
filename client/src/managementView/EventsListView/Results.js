@@ -62,8 +62,8 @@ function Results({ events }) {
     setLimit(event.target.value);
   };
 
-  const filteredJobs = applyFilters(events, query);
-  const paginatedJobs = applyPagination(filteredJobs, page, limit);
+  const filteredEvents = applyFilters(events, query);
+  const paginatedEvents = applyPagination(filteredEvents, page, limit);
 
   return (
     <Card className={classes.root}>
@@ -101,36 +101,38 @@ function Results({ events }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {paginatedJobs.map((job) => {
+              {paginatedEvents.map((event) => {
                 return (
-                  <TableRow hover key={job.id}>
+                  <TableRow hover key={event.id}>
                     <TableCell>
-                      <Typography variant="body1">#{job.id}</Typography>
+                      <Typography variant="body1">#{event.id}</Typography>
                     </TableCell>
                     <TableCell>
                       <Box display="flex" alignItems="center">
                         <div>
-                          <Typography variant="h5">{job.name}</Typography>
-                          <Typography variant="body2">{job.email}</Typography>
+                          <Typography variant="h5">{event.name}</Typography>
+                          <Typography variant="body2">{event.email}</Typography>
                         </div>
                       </Box>
                     </TableCell>
                     {today >
-                    moment(job.date, "dddd MMM Do, YYYY").format(
+                    moment(event.date, "dddd MMM Do, YYYY").format(
                       "MM/DD/YYYY"
                     ) ? (
                       <TableCell className={classes.pastDate}>
-                        {job.date}
+                        {event.date}
                       </TableCell>
                     ) : (
-                      <TableCell>{job.date}</TableCell>
+                      <TableCell>{event.date}</TableCell>
                     )}
                     <TableCell>
-                      {moment(job.time, "hh:mm:ss").format("hh:mm a")}
+                      {event.date
+                        ? moment(event.time, "hh:mm:ss").format("hh:mm a")
+                        : ""}
                     </TableCell>
-                    <TableCell>{job.service}</TableCell>
-                    <TableCell>{job.subject}</TableCell>
-                    <TableCell>{job.message}</TableCell>
+                    <TableCell>{event.service}</TableCell>
+                    <TableCell>{event.subject}</TableCell>
+                    <TableCell>{event.message}</TableCell>
                   </TableRow>
                 );
               })}
@@ -138,7 +140,7 @@ function Results({ events }) {
           </Table>
           <TablePagination
             component="div"
-            count={filteredJobs.length}
+            count={filteredEvents.length}
             onChangePage={handlePageChange}
             onChangeRowsPerPage={handleLimitChange}
             page={page}

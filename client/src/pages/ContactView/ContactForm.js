@@ -79,7 +79,7 @@ function ContactForm({ className, ...rest }) {
       validationSchema={Yup.object().shape({
         name: Yup.string().min(3, "Must be at least 3").required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
-        subject: Yup.string().required("Required"),
+        // subject: Yup.string().required("Required"),
         message: Yup.string().required("Required"),
       })}
       onSubmit={async (
@@ -88,10 +88,7 @@ function ContactForm({ className, ...rest }) {
       ) => {
         try {
           var user = values;
-          axios.post("/users", { user }).catch((error) => {
-            debugger;
-            console.log("api errors:", error);
-          });
+          axios.post("/api/v1/events", values);
           resetForm();
           setStatus({ success: true });
           setTimeout(function () {
@@ -147,7 +144,6 @@ function ContactForm({ className, ...rest }) {
             </Box>
             <Box mt={2} className={classes.flexConatiner}>
               <TextField
-                error={getIn(errors, "subject") && getIn(touched, "subject")}
                 fullWidth
                 label="Subject*"
                 name="subject"
@@ -178,10 +174,11 @@ function ContactForm({ className, ...rest }) {
               <Box>
                 {status && status.success ? (
                   <Typography variant="h6" className={classes.submitText}>
-                    Thank you, message sent!
+                    Message sent!
                   </Typography>
                 ) : null}
               </Box>
+              <Box flexGrow={1}></Box>
 
               <Box>
                 <Button

@@ -6,11 +6,11 @@ import { Grid } from "@material-ui/core";
 import TopBar from "./TopBar";
 import ImageSelect from "./ImageSelect";
 import ActionSection from "./ActionSection";
+// import { useStateValue } from "src/StateProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    // overflow: "hidden",
     height: "100%",
   },
   mainContainer: {
@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     [theme.breakpoints.down("xs")]: {
       padding: theme.spacing(0),
-      // height: "80%",
     },
   },
   paddingZero: {
@@ -31,45 +30,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DialogView = ({ image, images, setOpen }) => {
+const DialogView = ({ photo, handleClose, onNext, onPrev, history }) => {
   const classes = useStyles();
-  const [currentImage, setCurrentImage] = useState(null);
-  const [currentId, setCurrentId] = useState(images.indexOf(image));
 
-  const onNext = () => {
-    if (currentId + 1 > images.length - 1) {
-      setCurrentId(0);
-    } else {
-      setCurrentId(currentId + 1);
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 37) {
+      onPrev();
+    } else if (e.keyCode === 39) {
+      onNext();
     }
   };
-  const onPrev = () => {
-    if (currentId - 1 < 0) {
-      setCurrentId(images.length - 1);
-    } else {
-      setCurrentId(currentId - 1);
-    }
-  };
-
-  useEffect(() => {
-    if (currentId >= 0) {
-      setCurrentImage(images[currentId]);
-    }
-  }, [currentId, images]);
-
-  if (!currentImage) {
-    return null;
-  }
 
   return (
     <div className={classes.root}>
-      <TopBar image={currentImage} setOpen={setOpen} />
+      <TopBar image={photo} handleClose={handleClose} history={history} />
       <Grid container spacing={3} className={classes.mainContainer}>
         <Grid item xs={12} md={9} className={classes.paddingZero}>
-          <ImageSelect image={currentImage} onNext={onNext} onPrev={onPrev} />
+          <ImageSelect image={photo} onNext={onNext} onPrev={onPrev} />
         </Grid>
         <Grid item xs={12} md={3}>
-          <ActionSection image={currentImage} />
+          <ActionSection image={photo} />
         </Grid>
       </Grid>
     </div>

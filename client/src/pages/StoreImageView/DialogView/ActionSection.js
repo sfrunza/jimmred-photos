@@ -36,7 +36,8 @@ const ActionSection = ({ image }) => {
       <SectionHeader
         title={image.name}
         align="left"
-        subtitle={`Price: ${formatPrice(image.price)}`}
+        subtitle={`Dimensions: ${image.dimensions}`}
+        subtitle2={`Price: ${formatPrice(image.price)}`}
       />
       <Box>
         <Button

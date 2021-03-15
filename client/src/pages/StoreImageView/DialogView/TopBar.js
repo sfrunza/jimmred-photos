@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Typography,
@@ -10,31 +10,28 @@ import {
   Box,
   Drawer,
   Divider,
+  Dialog,
 } from "@material-ui/core";
-import { X as XIcon } from "react-feather";
 import {
+  X as XIcon,
   Heart as HeartIcon,
   Share as ShareIcon,
   ShoppingCart as ShoppigCartIcon,
   ChevronRight as ChevronRightIcon,
 } from "react-feather";
+import { FiSend } from "react-icons/fi";
 import { useStateValue } from "src/StateProvider";
 import CheckoutList from "src/layouts/MainLayout/CheckoutList";
 import { useCartContext } from "src/cart_context";
+import Share from "./Share";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // justifyContent: "center",
     background: "#fff",
     overflow: "hidden",
     color: "#000",
-    // position: "fixed",
     height: 100,
     zIndex: 1100,
-    // // transition: "height .2s ease-in-out",
-    // width: "100%",
-    // margin: "auto",
-    // right: "auto",
     boxShadow: "none",
   },
   flexGrow: {
@@ -71,23 +68,6 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
-  logo: {
-    fontWeight: 700,
-  },
-  listItemTextMobile: {
-    flex: "0 0 auto",
-    marginRight: theme.spacing(2),
-    textDecoration: "none",
-    whiteSpace: "nowrap",
-    color: "rgba(0,0,0,.54)",
-    fontWeight: 500,
-    display: "flex",
-    alignItems: "center",
-    "&:hover": {
-      color: theme.palette.primary.dark,
-      cursor: "pointer",
-    },
-  },
   drawerPaper: {
     width: "100%",
     maxWidth: 600,
@@ -103,13 +83,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: theme.spacing(0, 2),
   },
+  dialog: {
+    width: 600,
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      margin: theme.spacing(1),
+    },
+  },
 }));
 
-const TopBar = ({ setOpen, image }) => {
+const TopBar = ({ handleClose, image, history }) => {
   const classes = useStyles();
   const [{ open }, dispatch] = useStateValue();
   const { total_items } = useCartContext();
   // const [draw, setDraw] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     // setDraw(true);
@@ -127,6 +115,10 @@ const TopBar = ({ setOpen, image }) => {
     });
   };
 
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
   return (
     <AppBar className={classes.root}>
       <Toolbar disableGutters className={classes.toolbar}>
@@ -134,20 +126,38 @@ const TopBar = ({ setOpen, image }) => {
           <ListItem className={classes.listItem}>
             <Typography variant="h4" className={classes.listItemText}>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <HeartIcon strokeWidth="1.3" />
+                <HeartIcon strokeWidth="1.5" size="30" />
                 <Box ml={1}>
-                  <Typography variant="h4" component="h4" color="inherit">
+                  <Typography
+                    variant="body1"
+                    color="inherit"
+                    style={{ fontSize: 22 }}
+                  >
                     {image.likes}
                   </Typography>
                 </Box>
               </div>
             </Typography>
           </ListItem>
-          <ListItem className={classes.listItem}>
+          <ListItem
+            className={classes.listItem}
+            onClick={() => setModalOpen(true)}
+          >
             <Typography variant="h4" className={classes.listItemText}>
-              <ShareIcon strokeWidth="1.3" />
+              <FiSend size="30" strokeWidth="1.3" />
             </Typography>
           </ListItem>
+          <Dialog
+            classes={{
+              paper: classes.dialog,
+            }}
+            open={modalOpen}
+            onClose={handleModalClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <Share history={history} onClose={handleModalClose} />
+          </Dialog>
           <ListItem className={classes.listItem}>
             <Typography
               variant="h4"
@@ -155,16 +165,20 @@ const TopBar = ({ setOpen, image }) => {
               onClick={handleDrawerOpen}
             >
               <div style={{ display: "flex", alignItems: "center" }}>
-                <ShoppigCartIcon strokeWidth="1.3" />
+                <ShoppigCartIcon strokeWidth="1.5" size="30" />
                 <Box ml={1}>
-                  <Typography variant="h4" component="h4" color="inherit">
+                  <Typography
+                    variant="body1"
+                    color="inherit"
+                    style={{ fontSize: 22 }}
+                  >
                     {total_items}
                   </Typography>
                 </Box>
               </div>
             </Typography>
             <Drawer
-              className={classes.shoppingDrawer}
+              classes={classes.shoppingDrawer}
               anchor="right"
               open={open}
               elevation={12}
@@ -201,9 +215,9 @@ const TopBar = ({ setOpen, image }) => {
           <Typography
             type="button"
             style={{ cursor: "pointer" }}
-            onClick={() => setOpen(false)}
+            onClick={() => handleClose()}
           >
-            <XIcon size={50} strokeWidth="0.5" />
+            <XIcon size={50} strokeWidth="0.7" />
           </Typography>
         </ListItem>
       </Toolbar>

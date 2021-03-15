@@ -4,7 +4,8 @@ class CreatePhotos < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :price
       t.integer :likes
-      t.string :description
+      t.string :dimensions
+      t.string :filename
       t.boolean :liked, :default => false
 
       t.timestamps

@@ -46,6 +46,8 @@ function Uploader({ setImages, images, text }) {
         name: "",
         price: "",
         likes: 1,
+        filename: "",
+        dimensions: "",
       }}
       validationSchema={Yup.object().shape({})}
       onSubmit={async (
@@ -58,6 +60,8 @@ function Uploader({ setImages, images, text }) {
           formData.append("name", values.name);
           formData.append("price", values.price);
           formData.append("likes", values.likes);
+          formData.append("filename", values.filename);
+          formData.append("dimensions", values.dimensions);
 
           addPhoto(dispatch, formData, values);
 
@@ -99,7 +103,7 @@ function Uploader({ setImages, images, text }) {
                   spacing={2}
                   alignItems="flex-end"
                 >
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={12} md={3}>
                     <TextField
                       id="name"
                       name="name"
@@ -110,7 +114,18 @@ function Uploader({ setImages, images, text }) {
                       onChange={handleChange}
                     />
                   </Grid>
-                  <Grid item xs={12} md={4}>
+                  <Grid item xs={12} md={3}>
+                    <TextField
+                      id="dimensions"
+                      name="dimensions"
+                      label="Dimensions"
+                      type="text"
+                      size="small"
+                      value={values.dimensions}
+                      onChange={handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={3}>
                     <TextField
                       id="price"
                       name="price"
