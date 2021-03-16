@@ -6,18 +6,20 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {},
   videoIframe: {
-    borderRadius: theme.spacing(1),
+    // borderRadius: theme.spacing(1),
     margin: "auto",
     display: "flex",
-    width: "87%",
+    width: "95%",
     [theme.breakpoints.down("sm")]: {
-      boxShadow: "none",
-      width: "75%",
+      // boxShadow: "none",
+      width: "88%",
     },
   },
   navButtons: {
     backgroundColor: "transparent",
     color: "#000",
+    margin: 0,
+    padding: 0,
     "&:hover": {
       backgroundColor: "transparent",
       color: "#000",
@@ -34,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 const VideoSection = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+  const isSm = useMediaQuery(theme.breakpoints.up("sm"), {
     defaultMatches: true,
   });
   var items = [
@@ -61,7 +63,7 @@ const VideoSection = (props) => {
             <iframe
               className={classes.videoIframe}
               title={item.name}
-              height={isMd ? "415" : "200"}
+              height={isSm ? "415" : "200"}
               src={item.url}
               frameBorder="0"
               allowFullScreen

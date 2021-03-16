@@ -16,13 +16,15 @@ const ImagesList = () => {
   const classes = useStyles();
   const [{ photos }] = useStateValue();
 
+  let images = photos.filter((photo) => photo.price !== null);
+
   if (!photos) {
     return <div>Loading</div>;
   }
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        {photos.map((image) => {
+        {images.map((image) => {
           return (
             <Grid item xs={12} md={4} key={image.id}>
               <ImageTile image={image} />
