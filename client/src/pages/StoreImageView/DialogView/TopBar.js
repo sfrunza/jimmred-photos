@@ -15,7 +15,6 @@ import {
 import {
   X as XIcon,
   Heart as HeartIcon,
-  Share as ShareIcon,
   ShoppingCart as ShoppigCartIcon,
   ChevronRight as ChevronRightIcon,
 } from "react-feather";
@@ -178,7 +177,6 @@ const TopBar = ({ handleClose, image, history }) => {
               </div>
             </Typography>
             <Drawer
-              classes={classes.shoppingDrawer}
               anchor="right"
               open={open}
               elevation={12}

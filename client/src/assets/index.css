@@ -116,7 +116,7 @@ a {
 .container {
   position: relative;
   width: auto;
-  height: 400px;
+  height: 350px;
 }
 .container:before {
   content: "";

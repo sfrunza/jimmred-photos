@@ -12,7 +12,6 @@ import Gallery from "react-grid-gallery";
 // import useIsMountedRef from 'src/hooks/useIsMountedRef';
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useStateValue } from "src/StateProvider";
-import { useSnackbar } from "notistack";
 // import { deleteImage } from "src/ImagesAction";
 // import LoadingScreen from "src/components/LoadingScreen";
 // import ResponsiveGallery from "react-responsive-gallery";
@@ -46,7 +45,6 @@ function GridGallery({ images }) {
   const classes = useStyles();
   const [currentImage, setCurrentImage] = useState(0);
   const [{ user }] = useStateValue();
-  const { enqueueSnackbar } = useSnackbar();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"), {
     defaultMatches: true,

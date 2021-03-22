@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 400,
     maxHeight: 600,
     marginTop: 74,
-    background: `url("https://static.wixstatic.com/media/a38016_9fd3dc47b90043c2a717a0f3ae772d9d.jpg/v1/fill/w_2698,h_1500,al_t,q_90,usm_0.66_1.00_0.01/a38016_9fd3dc47b90043c2a717a0f3ae772d9d.webp") no-repeat center ${colors.blueGrey[200]}`,
+    background: `url("https://instagram.fnyc1-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/124376475_1000602637016995_6382279792491551387_n.jpg?tp=1&_nc_ht=instagram.fnyc1-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=Qaw66zzeXiIAX8zKF2Z&ccb=7-4&oh=ae2422c3a3fc6b8ce2e23e47c4eacaab&oe=607E8123&_nc_sid=4f375e") no-repeat center ${colors.blueGrey[200]}`,
     backgroundSize: "cover",
     [theme.breakpoints.up("md")]: {
       minHeight: "90vh",

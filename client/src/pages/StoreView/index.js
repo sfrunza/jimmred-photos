@@ -13,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     marginTop: 74,
   },
+  section: {
+    // maxWidth: 1300,
+    // [theme.breakpoints.up("md")]: {
+    //   padding: theme.spacing(12, 0),
+    // },
+  },
 }));
 
 const StoreView = () => {
@@ -20,7 +26,7 @@ const StoreView = () => {
 
   return (
     <Page title="Store" className={classes.root}>
-      <Section>
+      <Section className={classes.section}>
         <SectionHeader title="Store" align="center" />
         <ImagesList />
       </Section>

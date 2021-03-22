@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import Page from "src/components/Page";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
@@ -33,13 +33,13 @@ const useStyles = makeStyles((theme) => ({
 const DialogView = ({ photo, handleClose, onNext, onPrev, history }) => {
   const classes = useStyles();
 
-  const handleKeyDown = (e) => {
-    if (e.keyCode === 37) {
-      onPrev();
-    } else if (e.keyCode === 39) {
-      onNext();
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.keyCode === 37) {
+  //     onPrev();
+  //   } else if (e.keyCode === 39) {
+  //     onNext();
+  //   }
+  // };
 
   return (
     <div className={classes.root}>

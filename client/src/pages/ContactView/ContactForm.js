@@ -79,7 +79,7 @@ function ContactForm({ className, ...rest }) {
       validationSchema={Yup.object().shape({
         name: Yup.string().min(3, "Must be at least 3").required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
-        // subject: Yup.string().required("Required"),
+        subject: Yup.string().required("Required"),
         message: Yup.string().required("Required"),
       })}
       onSubmit={async (
@@ -146,6 +146,7 @@ function ContactForm({ className, ...rest }) {
               <TextField
                 fullWidth
                 label="Subject*"
+                error={getIn(errors, "subject") && getIn(touched, "subject")}
                 name="subject"
                 onBlur={handleBlur}
                 onChange={handleChange}

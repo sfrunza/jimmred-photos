@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import {
-  Container,
   Typography,
   makeStyles,
-  Paper,
   DialogTitle,
   DialogContent,
   DialogContentText,
-  DialogActions,
-  Button,
   Box,
   IconButton,
 } from "@material-ui/core";
@@ -66,7 +62,7 @@ const Share = ({ history, onClose }) => {
   const [copy, setCopy] = useState(false);
 
   const CopyToClipBoard = (text) => {
-    if (navigator.clipboard != undefined) {
+    if (navigator.clipboard !== undefined) {
       //Chrome
       navigator.clipboard.writeText(text).then(
         function () {

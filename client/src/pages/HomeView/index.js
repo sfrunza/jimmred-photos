@@ -1,18 +1,12 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import Page from "src/components/Page";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Grid, useMediaQuery } from "@material-ui/core";
 // import HeroBackground from "src/components/HeroBackground";
 // import Gallery from "./Gallery";
 import SectionHeader from "src/components/SectionHeader";
 import Section from "src/components/Section";
-import clsx from "clsx";
-import GridGallery from "./GridGallery";
-import axios from "axios";
 import Header from "./Header";
 import VideoSection from "./VideoSection";
-import { useStateValue } from "src/StateProvider";
-import Uploader from "src/components/Uploader";
 import Feed from "react-instagram-authless-feed";
 // import LoadingScreen from "src/components/LoadingScreen";
 
@@ -26,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   section: {
+    maxWidth: 1200,
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(10, 0),
     },
@@ -37,13 +32,12 @@ const useStyles = makeStyles((theme) => ({
   instagramSection: {
     padding: theme.spacing(0),
     maxWidth: 1400,
-    marginTop: theme.spacing(10),
   },
   feed: {
     // width: 300,
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     // border: "1px solid",
     // borderRadius: theme.spacing(1),
     padding: theme.spacing(1),
@@ -74,11 +68,6 @@ const useStyles = makeStyles((theme) => ({
 const HomeView = () => {
   const classes = useStyles();
   // const [images, setImages] = useState(null);
-  const [{ photos, user }, dispatch] = useStateValue();
-  const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
-    defaultMatches: true,
-  });
 
   // const getImages = useCallback(() => {
   //   axios.get("/api/v1/photos").then((response) => {
@@ -112,7 +101,7 @@ const HomeView = () => {
   // if (!images) {
   //   return null;
   // }
-  let images = photos.filter((photo) => photo.price === null);
+  // let images = photos.filter((photo) => photo.price === null);
 
   return (
     <Page title="Portfolio" className={classes.root}>
@@ -132,12 +121,12 @@ const HomeView = () => {
           disableGutter
           titleProps={{ className: classes.insta, variant: "h3" }}
         />
-        <Feed
+        {/*<Feed
           userName="jimmredphotos"
           className={classes.feed}
           classNameLoading="Loading"
           limit="12"
-        />
+        />*/}
       </Section>
     </Page>
   );

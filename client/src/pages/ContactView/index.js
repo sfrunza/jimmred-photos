@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 400,
     maxHeight: 600,
     marginTop: 74,
-    background: `url("https://static.wixstatic.com/media/a38016_06297691cb8b4c34895a188f45151984.jpg/v1/fill/w_2698,h_1964,al_t,q_90,usm_0.66_1.00_0.01/a38016_06297691cb8b4c34895a188f45151984.webp") no-repeat center ${colors.blueGrey[200]}`,
+    background: `url("https://instagram.fnyc1-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/161778003_3781433915243701_4982902372895945092_n.jpg?tp=1&_nc_ht=instagram.fnyc1-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=N7HQmHCBRycAX-_W4pc&ccb=7-4&oh=cfc126d50944861719d2347a1b6bce76&oe=608088ED&_nc_sid=4f375e") no-repeat center ${colors.blueGrey[200]}`,
     backgroundSize: "cover",
     [theme.breakpoints.up("md")]: {
       minHeight: "90vh",

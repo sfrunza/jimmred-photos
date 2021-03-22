@@ -48,6 +48,7 @@ function Uploader({ setImages, images, text }) {
         likes: 1,
         filename: "",
         dimensions: "",
+        link: null,
       }}
       validationSchema={Yup.object().shape({})}
       onSubmit={async (
@@ -62,6 +63,7 @@ function Uploader({ setImages, images, text }) {
           formData.append("likes", values.likes);
           formData.append("filename", values.filename);
           formData.append("dimensions", values.dimensions);
+          formData.append("link", values.link);
 
           addPhoto(dispatch, formData, values);
 
@@ -69,7 +71,7 @@ function Uploader({ setImages, images, text }) {
 
           setStatus({ success: true });
           setSubmitting(false);
-          enqueueSnackbar("Image Added", {
+          enqueueSnackbar("Photo Added", {
             variant: "success",
             anchorOrigin: {
               vertical: "top",

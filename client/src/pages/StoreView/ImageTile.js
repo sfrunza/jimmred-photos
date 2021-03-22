@@ -119,7 +119,7 @@ const ImageTile = ({ image }) => {
     // let s3 = new AWS.S3({ params: { Bucket: bucket } });
     let params = { Bucket: bucket, Key: key };
     s3.getObject(params, (err, data) => {
-      if (!err) {
+      if (data) {
         let blob = new Blob([data.Body], { type: data.ContentType });
         let link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
@@ -128,16 +128,16 @@ const ImageTile = ({ image }) => {
       }
     });
   };
+
   var newImage = new Image();
-  newImage.src = image.image.url + "?t=" + new Date().getTime();
+  newImage.src = image.link.url + "?t=" + new Date().getTime();
 
   return (
     <div className="container">
       <img
-        src={image.image.url}
+        src={newImage.src}
         alt={image.name}
         style={{ pointerEvents: "none" }}
-        // crossOrigin="anonymous"
       />
       <div className={classes.captionStyle}>
         <Box flexGrow={1} className={classes.buyNow}>
@@ -182,13 +182,7 @@ const ImageTile = ({ image }) => {
             </Box>
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <LightTooltip title="Download" placement="top">
-              {/*<RouterLink to={url} target="_blank" download>
-                Download
-              </RouterLink>*/}
-              {/*<a rel="nofollow" download target="_blank" href={url}>
-                <span>Download</span>
-              </a>*/}
+            {/*<LightTooltip title="Download" placement="top">
               <Button className={classes.btnPadding}>
                 <FiDownload
                   size={25}
@@ -196,7 +190,7 @@ const ImageTile = ({ image }) => {
                   onClick={() => downloadImage()}
                 />
               </Button>
-            </LightTooltip>
+            </LightTooltip>*/}
           </div>
         </Box>
       </div>

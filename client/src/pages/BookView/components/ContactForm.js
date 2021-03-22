@@ -63,13 +63,11 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
       initialValues={{
         name: formState.values.name || "",
         email: formState.values.email || "",
-        subject: formState.values.subject || "",
         message: formState.values.message || "",
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string().min(3, "Must be at least 3").required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
-        // subject: Yup.string().required("Required"),
         message: Yup.string().required("Required"),
       })}
       onSubmit={async (
@@ -189,17 +187,6 @@ function ContactForm({ formState, setFormState, onBack, setCompleted }) {
                       required
                       onChange={handleChange}
                       value={values.email || ""}
-                      variant="outlined"
-                      size="small"
-                    />
-                  </Box>
-                  <Box mt={2} className={classes.flexConatiner}>
-                    <TextField
-                      fullWidth
-                      label="Subject"
-                      name="subject"
-                      onChange={handleChange}
-                      value={values.subject || ""}
                       variant="outlined"
                       size="small"
                     />

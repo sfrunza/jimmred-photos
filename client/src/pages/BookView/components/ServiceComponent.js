@@ -139,7 +139,7 @@ const ServiceComponent = ({ onBack, onNext, setFormState, formState }) => {
           <Typography variant="h4" gutterBottom>
             Contact Details
           </Typography>
-          <Typography variant="body1">jimmredphotos@gmail.com</Typography>
+          <Typography variant="body1">jjxcustom@gmail.com</Typography>
           <Typography variant="body1">
             777 Boston st, Boston, MA, 02777
           </Typography>

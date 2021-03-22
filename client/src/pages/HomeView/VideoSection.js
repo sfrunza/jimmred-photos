@@ -40,9 +40,9 @@ const VideoSection = (props) => {
     defaultMatches: true,
   });
   var items = [
-    { name: "video1", url: "https://www.youtube.com/embed/ZZp4EHKXXX0" },
-    { name: "video2", url: "https://www.youtube.com/embed/rjuQKcXQBtw" },
-    { name: "video3", url: "https://www.youtube.com/embed/uBE9lRoOBJA" },
+    { name: "video1", url: "https://www.youtube.com/embed/C26E2qSiUdA" },
+    { name: "video2", url: "https://www.youtube.com/embed/PiHs-BznuDs" },
+    { name: "video3", url: "https://www.youtube.com/embed/onOEns_MnC4" },
   ];
 
   return (
@@ -63,7 +63,7 @@ const VideoSection = (props) => {
             <iframe
               className={classes.videoIframe}
               title={item.name}
-              height={isSm ? "415" : "200"}
+              height={isSm ? "500" : "200"}
               src={item.url}
               frameBorder="0"
               allowFullScreen
@@ -77,14 +77,3 @@ const VideoSection = (props) => {
 };
 
 export default VideoSection;
-
-function Item(props) {
-  return (
-    <Paper>
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
-
-      <Button className="CheckButton">Check it out!</Button>
-    </Paper>
-  );
-}

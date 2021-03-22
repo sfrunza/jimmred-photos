@@ -55,7 +55,7 @@ const Header = () => {
           color="textPrimary"
           className={classes.header}
         >
-          URBAN PHOTOGRAPHER
+          Photographer & Videographer
         </Typography>
       </Box>
       <Box display="flex" mt={isMd ? 0 : 1}>

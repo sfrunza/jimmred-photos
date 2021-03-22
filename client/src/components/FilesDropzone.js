@@ -88,7 +88,7 @@ function FilesDropzone({
 
     const options = {
       maxSizeMB: 0.5,
-      maxWidthOrHeight: 2500,
+      maxWidthOrHeight: 1900,
       // useWebWorker: true,
     };
     try {
@@ -96,6 +96,7 @@ function FilesDropzone({
       Object.assign(compressedFile, { path: imageFile.path });
       setFiles(imageFile);
       setFieldValue("image", imageFile);
+      setFieldValue("link", compressedFile);
       setFieldValue("filename", imageFile.name);
     } catch (error) {
       console.log(error);

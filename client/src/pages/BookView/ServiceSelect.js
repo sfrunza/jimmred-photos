@@ -78,7 +78,7 @@ function ServiceSelect({
             formState={formState}
             setFormState={setFormState}
             onBack={onBack}
-            rate="1900"
+            rate="190"
           />
         </Grid>
       </Grid>

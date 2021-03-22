@@ -91,8 +91,8 @@ function Results() {
                 <TableCell padding="checkbox"></TableCell>
                 <TableCell>Photo</TableCell>
                 <TableCell>Name</TableCell>
+                <TableCell>Dimensions</TableCell>
                 <TableCell>Price</TableCell>
-                <TableCell>Likes</TableCell>
                 <TableCell align="right">Actions</TableCell>
               </TableRow>
             </TableHead>

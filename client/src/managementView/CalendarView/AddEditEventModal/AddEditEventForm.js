@@ -45,12 +45,6 @@ function AddEditEventForm({ event, mode, onAdd, onCancel, onDelete, onEdit }) {
             <Typography variant="body2">{event.email}</Typography>
           </Box>
           <Box mt={1}>
-            <Typography variant="h6">Subject</Typography>
-          </Box>
-          <Box>
-            <Typography variant="body2">{event.subject}</Typography>
-          </Box>
-          <Box mt={1}>
             <Typography variant="h6">Message</Typography>
           </Box>
           <Box>

@@ -74,7 +74,7 @@ const ImgMediaCard = ({
       >
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt={title}
           height="200"
           image={image}
           title={title}
