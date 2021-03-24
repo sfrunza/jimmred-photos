@@ -57,7 +57,6 @@ const StoreImageView = (props) => {
   if (!photo) {
     return null;
   }
-  console.log(photo);
 
   return (
     <Container maxWidth={false} disableGutters>

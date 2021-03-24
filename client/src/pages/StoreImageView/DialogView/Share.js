@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     backgroundColor: "#000",
     padding: theme.spacing(1),
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 50,
+    },
     "&:hover": {
       cursor: "pointer",
     },
@@ -77,7 +80,6 @@ const Share = ({ history, onClose }) => {
       window.clipboardData.setData("Text", text);
     }
   };
-  console.log(window.location.href);
 
   return (
     <>

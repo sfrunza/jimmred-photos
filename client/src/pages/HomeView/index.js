@@ -8,6 +8,7 @@ import Section from "src/components/Section";
 import Header from "./Header";
 import VideoSection from "./VideoSection";
 import Feed from "react-instagram-authless-feed";
+import ErrorBoundary from "./ErrorBoundary";
 // import LoadingScreen from "src/components/LoadingScreen";
 
 const useStyles = makeStyles((theme) => ({
@@ -121,12 +122,14 @@ const HomeView = () => {
           disableGutter
           titleProps={{ className: classes.insta, variant: "h3" }}
         />
-        {/*<Feed
-          userName="jimmredphotos"
-          className={classes.feed}
-          classNameLoading="Loading"
-          limit="12"
-        />*/}
+        <ErrorBoundary>
+          <Feed
+            userName="jimmredphotos"
+            className={classes.feed}
+            classNameLoading="Loading"
+            limit="12"
+          />
+        </ErrorBoundary>
       </Section>
     </Page>
   );

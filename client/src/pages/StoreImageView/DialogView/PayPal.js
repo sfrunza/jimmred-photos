@@ -6,7 +6,6 @@ export default function Paypal({ image, downloadImage }) {
   const paypal = useRef();
   const [success, setSuccess] = useState(false);
   const { clearCart, cart, total_amount } = useCartContext();
-  console.log(image);
 
   useEffect(() => {
     var arr = [];
